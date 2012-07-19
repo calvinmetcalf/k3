@@ -8,7 +8,7 @@ function bb(b){
     var a = [];
     b.visit(c);
 function c(quad, x1, y1, x2, y2) {
-    var poly = new L.Polygon([makel([x1,y1]),makel([x2,y1]),makel([x2,y2]),makel([x1,y2])],{fillOpacity:0,weight:1,color:"#000"});
+    var poly = new L.Polygon([makel([x1,y1]),makel([x2,y1]),makel([x2,y2]),makel([x1,y2])],{fillOpacity:0,weight:1,color:"#000",clickable:false});
         a.push(poly);
       }
 return a;
@@ -29,7 +29,7 @@ var p = oa.features.map(function(v){
     
     var r = {x:v.geometry.coordinates[0],y:v.geometry.coordinates[1],properties:v.properties};
     var latlng =new L.LatLng(r.y,r.x);
-    var circ = new L.CircleMarker(latlng,{stroke:false,fillOpacity:1})
+    var circ = new L.CircleMarker(latlng,{stroke:false,fillOpacity:1,clickable:false})
     m.addLayer(circ.setRadius(3));
     return r;
     }
