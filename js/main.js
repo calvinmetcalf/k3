@@ -27,7 +27,7 @@ function makel(ll){
 }
 var m = new L.Map('map');
  var t = new L.TileLayer("http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png", 
-{subdomains:["otile1","otile2","otile3","otile4"],
+{subdomains:["otile1","otile2","otile4"],
 attribution:"Tiles from Mapquest, Tile data from Open Street Map"});
 m.addLayer(t).setView(new L.LatLng(42.04113400940814,-71.795654296875), 8);
 $(function() {
