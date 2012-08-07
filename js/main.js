@@ -3,7 +3,14 @@ Calvin Metcalf
 */
 
 var q,dd;
-
+var s={
+  lat:{max:42.85949,
+  min:41.57026
+  },
+  lng:{max:-70.10718,
+  min:-73.36505
+  }
+};
 function bb(b){
     var a = [];
     b.visit(c);
@@ -25,6 +32,7 @@ attribution:"Tiles from Mapquest, Tile data from Open Street Map"});
 m.addLayer(t).setView(new L.LatLng(42.04113400940814,-71.795654296875), 8);
 $(function() {
 d3.json("js/oa.json", function(oa) {
+
 var p = oa.features.map(function(v){
     
     var r = {x:v.geometry.coordinates[0],y:v.geometry.coordinates[1],properties:v.properties};
@@ -35,7 +43,7 @@ var p = oa.features.map(function(v){
     }
     
     );
-q = d3.geom.quadtree(p);
+q = d3.geom.quadtree(p,s.lng.min,s.lat.min,s.lng.max,s.lat.max);
 dd=bb(q);
 var len = dd.length;
 var i = 0;
