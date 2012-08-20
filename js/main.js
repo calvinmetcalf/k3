@@ -26,9 +26,9 @@ function makel(ll){
     
 }
 var m = new L.Map('map');
- var t = new L.TileLayer("http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png", 
-{subdomains:["otile1","otile2","otile4"],
-attribution:"Tiles from Mapquest, Tile data from Open Street Map"});
+ var t = new L.TileLayer("http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.jpeg", 
+{subdomains:["otile1","otile2","otile3","otile4"],
+attribution:"Tile Data from <a href='http://www.openstreetmap.org/' target='_blank'>OSM</a>, Tiles Courtesy of <a href='http://www.mapquest.com/' target='_blank'>MapQuest</a> <img src='http://developer.mapquest.com/content/osm/mq_logo.png'>"});
 m.addLayer(t).setView(new L.LatLng(42.04113400940814,-71.795654296875), 8);
 $(function() {
 d3.json("js/oa.json", function(oa) {
